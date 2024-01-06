@@ -50,7 +50,7 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
+function CemberinCevresi() {
   /* kodlar buraya */
 }
 
@@ -64,9 +64,10 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap) {
+ return pi * Math.pow(yaricap,2);
 }
+console.log(CemberinAlani(15));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -99,27 +100,47 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+        let min = sayilar[0];
+        let max = sayilar[0];
+        for(let i = 0; i< sayilar.length ;i++){
+            if(max < sayilar[i])
+               max = sayilar[i]; 
+            if(min > sayilar[i])
+               min = sayilar[i]; 
+        }
+        console.log(`En büyük: ${max} En Küçük: ${min}`);
+//3b çözümü
 
-// 3b çözümü:
-
-/* kodlar buraya */
+ucetambolunenler = [];
+sayilar.forEach(item => {
+  if (item % 3 === 0) {
+    ucetambolunenler.push(item);
+  }
+});
+console.log(ucetambolunenler);
 
 // 3c çözümü:
-
-/* kodlar buraya */
+console.log(ucebolunenlerintoplami = ucetambolunenler.reduce((sayi,deger) => sayi + deger,0));   
 
 // 3d çözümü
 
-/* kodlar buraya */
+console.log(besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500));   
 
 // 3e çözümü
 
-/* kodlar buraya */
-
+console.log(siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a - b));
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredensayilar = [];
+tekrarSayi = {}
+sayilar.forEach((sayi) => tekrarSayi[sayi] = (tekrarSayi[sayi] || 0) + 1);
+for(let sayi in tekrarSayi) 
+{
+  if (tekrarSayi[sayi] > 1)  {
+  tekraredensayilar.push(`${sayi} sayısı ${tekrarSayi[sayi]} kere tekrar edilmiştir`);
+  }
+}
+console.log(tekraredensayilar);
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
